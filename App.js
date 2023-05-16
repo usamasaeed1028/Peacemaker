@@ -1,11 +1,12 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SplashScreen from "./screens/SplashScreen";
-import SignupScreen from "./screens/loginscreens/SignupScreen";
+import Signup from "./screens/loginscreens/Signup";
 import { Ionicons } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import CustomHeader from "./components/ui-components/CustomHeader";
-import AccountabilityScreen from "./screens/loginscreens/AccountabilityScreen";
+import AccountabilityBuddies from "./screens/loginscreens/AccountabilityBuddies";
+import AccountabilityPartner from "./screens/loginscreens/AccountabilityPartner";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,8 +24,8 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="SignupScreen"
-          component={SignupScreen}
+          name="Signup"
+          component={Signup}
           options={{
             headerTintColor: "#2791B5",
             headerShadowVisible: false,
@@ -33,8 +34,20 @@ export default function App() {
           }}
         />
         <Stack.Screen
-          name="AccountabilityScreen"
-          component={AccountabilityScreen}
+          name="AccountabilityBuddies"
+          component={AccountabilityBuddies}
+          options={{
+            headerTintColor: "#2791B5",
+            headerShadowVisible: false,
+            headerTitle: "",
+            // headerRight: () => {
+            //   <Text>Done</Text>;
+            // },
+          }}
+        />
+        <Stack.Screen
+          name="AccountabilityPartner"
+          component={AccountabilityPartner}
           options={{
             headerTintColor: "#2791B5",
             headerShadowVisible: false,

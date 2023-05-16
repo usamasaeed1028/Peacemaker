@@ -59,7 +59,7 @@ const Signup = () => {
           <Text style={{ color: "#2791B5" }}> Privacy & Policy </Text>
           and <Text style={{ color: "#2791B5" }}> Terms & Conditions</Text>.
         </Text>
-        <Button onPress={() => navigate("AccountabilityScreen")}>
+        <Button onPress={() => navigate("AccountabilityPartner")}>
           Create Account
         </Button>
         <Text

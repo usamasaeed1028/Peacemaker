@@ -1,13 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { STYLES } from "../../constants/styles";
 import { COLORS } from "../../constants/colors";
-import Button from "../../components/ui-components/Button";
-import NoBuddies from "../../components/profile-components/accountability/NoBuddies";
 import BuddiesList from "../../components/profile-components/accountability/BuddiesList";
+import { LIST } from "../../data/data";
 
-const AccountabilityScreen = () => {
+const AccountabilityBuddies = () => {
   return (
     <View style={STYLES.container}>
       <Text style={[STYLES.text28, { color: COLORS.neutral900 }]}>
@@ -37,12 +36,16 @@ const AccountabilityScreen = () => {
         />
       </View>
       {/* <NoBuddies /> */}
-      <BuddiesList />
+      <FlatList
+        data={LIST}
+        keyExtractor={(item) => item.id}
+        renderItem={(itemData) => <BuddiesList list={itemData.item} />}
+      />
     </View>
   );
 };
 
-export default AccountabilityScreen;
+export default AccountabilityBuddies;
 
 const styles = StyleSheet.create({
   searchContainer: {
@@ -52,6 +55,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: "rgba(118, 118, 128, 0.12)",
     position: "relative",
+    marginBottom: 8,
   },
   searchIcon: {
     position: "absolute",

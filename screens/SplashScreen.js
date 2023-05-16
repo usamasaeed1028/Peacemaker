@@ -22,7 +22,7 @@ const SplashScreen = ({ navigation }) => {
       </Text>
       <Button
         style={{ paddingHorizontal: 122 }}
-        onPress={() => navigation.navigate("SignupScreen")}
+        onPress={() => navigation.navigate("Signup")}
       >
         Get Started
       </Button>

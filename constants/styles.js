@@ -26,4 +26,7 @@ export const STYLES = StyleSheet.create({
     fontWeight: "500",
     lineHeight: 18,
   },
+  pressed: {
+    opacity: 0.75,
+  },
 });
