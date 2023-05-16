@@ -1,6 +1,7 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { Image, StyleSheet, Text } from "react-native";
 import Button from "../components/ui-components/Button";
+import { STYLES } from "../constants/styles";
 
 const SplashScreen = ({ navigation }) => {
   return (
@@ -12,12 +13,17 @@ const SplashScreen = ({ navigation }) => {
         source={require("../assets/images/logo.png")}
         style={styles.image}
       />
-      <Text style={styles.welcomeHeading}>Welcome to Peace Maker</Text>
-      <Text style={styles.welcomeText}>
+      <Text style={[styles.welcomeHeading, STYLES.text34]}>
+        Welcome to Peace Maker
+      </Text>
+      <Text style={[styles.welcomeText, STYLES.text13]}>
         Track you everyday routine, get free assessment with professionals and
         have your life together.
       </Text>
-      <Button onPress={() => navigation.navigate("SignupScreen")}>
+      <Button
+        style={{ paddingHorizontal: 122 }}
+        onPress={() => navigation.navigate("SignupScreen")}
+      >
         Get Started
       </Button>
     </LinearGradient>
@@ -30,8 +36,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: 16,
-    
   },
   image: {
     width: 273,
@@ -39,18 +45,13 @@ const styles = StyleSheet.create({
   },
   welcomeHeading: {
     marginTop: 52,
-    fontSize: 34,
-    fontWeight: "bold",
-    lineHeight: 41,
     color: "white",
     textAlign: "center",
   },
   welcomeText: {
     marginTop: 9,
-    fontSize: 13,
-    fontWeight: "600",
-    lineHeight: 18,
     color: "white",
     textAlign: "center",
+    opacity: 0.7,
   },
 });

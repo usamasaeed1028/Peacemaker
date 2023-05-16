@@ -9,8 +9,8 @@ const SignupForm = () => {
       <Input type="date" placeholder="Date of birth (DD/MM/YY)" />
       <Input type="text" placeholder="Location" />
       <View style={styles.formFields}>
-        <Input type="text" placeholder="Height (cm)" />
-        <Input type="text" placeholder="Weight (lbs)" />
+        <Input type="text" placeholder="Height (cm)"  style={styles.formFieldss}/>
+        <Input type="text" placeholder="Weight (lbs)" style={styles.formFieldss} />
       </View>
       <Input type="text" placeholder="Email" />
       <Input type="password" placeholder="Password" />
@@ -22,10 +22,14 @@ export default SignupForm;
 
 const styles = StyleSheet.create({
   formContainer: {
+    marginTop: 20,
     gap: 16,
   },
   formFields: {
     flexDirection: "row",
     gap: 8,
+  },
+  formFieldss: {
+   width: '47%'
   },
 });
