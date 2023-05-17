@@ -23,10 +23,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#E7EAEB",
     borderRadius: 12,
+    backgroundColor: '#ffffff'
   },
   inputInnerContainer: {
     color: "#94A5AB",
-    paddingHorizontal: 14,
-    paddingVertical: 19,
+    paddingHorizontal: 19,
+    paddingVertical: 14,
   },
 });

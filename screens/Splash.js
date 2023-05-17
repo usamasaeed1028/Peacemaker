@@ -3,7 +3,9 @@ import { Image, StyleSheet, Text } from "react-native";
 import Button from "../components/ui-components/Button";
 import { STYLES } from "../constants/styles";
 
-const SplashScreen = ({ navigation }) => {
+
+const Splash = ({ navigation }) => {
+
   return (
     <LinearGradient
       colors={["#265565", "#288FB1", "#265565"]}
@@ -11,6 +13,7 @@ const SplashScreen = ({ navigation }) => {
     >
       <Image
         source={require("../assets/images/logo.png")}
+        resizeMode="cover"
         style={styles.image}
       />
       <Text style={[styles.welcomeHeading, STYLES.text34]}>
@@ -22,7 +25,7 @@ const SplashScreen = ({ navigation }) => {
       </Text>
       <Button
         style={{ paddingHorizontal: 122 }}
-        onPress={() => navigation.navigate("Signup")}
+        onPress={() => navigation.navigate("SignupScreen")}
       >
         Get Started
       </Button>
@@ -30,7 +33,7 @@ const SplashScreen = ({ navigation }) => {
   );
 };
 
-export default SplashScreen;
+export default Splash;
 
 const styles = StyleSheet.create({
   container: {
@@ -38,10 +41,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 16,
+    paddingBottom: 48,
   },
   image: {
-    width: 273,
-    height: 332,
+    // width: 273,
+    // height: 500,
   },
   welcomeHeading: {
     marginTop: 52,

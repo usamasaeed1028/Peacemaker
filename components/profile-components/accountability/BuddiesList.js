@@ -1,11 +1,42 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  Touchable,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { STYLES } from "../../../constants/styles";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../../../constants/colors";
+import { useNavigation } from "@react-navigation/native";
 
 const BuddiesList = ({ list }) => {
+  const navigation = useNavigation();
   const [isAddBuddies, setIsAddBuddies] = useState([]);
+  //   useLayoutEffect(() => {
+  //     navigation.setOptions({
+  //       headerRight: () => (
+  //         <TouchableOpacity
+  //           onPress={() => navigation.navigate("AccountabilityPartnersScreen")}
+  //         >
+  //           <Text
+  //             style={[
+  //               STYLES.text16,
+  //               isAddBuddies.length == 0
+  //                 ? { color: "#D6D6D6" }
+  //                 : { color: COLORS.mainGreen },
+  //             ]}
+  //           >
+  //             Done
+  //           </Text>
+  //         </TouchableOpacity>
+  //       ),
+  //     });
+  //   }, [navigation, isAddBuddies]);
+
   const handleAddBuddies = (id) => {
     setIsAddBuddies((prev) => [...prev, id]);
   };
@@ -18,6 +49,7 @@ const BuddiesList = ({ list }) => {
         <View style={styles.innerContainer}>
           <Image
             source={require("../../../assets/images/avatar2.png")}
+            resizeMode="cover"
             alt="avatarImg"
             style={styles.image}
           />
@@ -39,7 +71,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: 'center',
+    alignItems: "center",
     paddingRight: 10,
   },
   innerContainer: {

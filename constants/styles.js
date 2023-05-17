@@ -4,6 +4,7 @@ export const STYLES = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 16,
+    paddingVertical: 20,
     backgroundColor: "#F9FAFA",
   },
   text34: {
@@ -25,8 +26,5 @@ export const STYLES = StyleSheet.create({
     fontSize: 16,
     fontWeight: "500",
     lineHeight: 18,
-  },
-  pressed: {
-    opacity: 0.75,
   },
 });

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { STYLES } from "../../constants/styles";
 import { COLORS } from "../../constants/colors";
 import BuddiesList from "../../components/profile-components/accountability/BuddiesList";
 import { LIST } from "../../data/data";
+import NoBuddies from "../../components/profile-components/accountability/NoBuddies";
 
-const AccountabilityBuddies = () => {
+const AccountabilityBuddies = ({ navigation }) => {
+
   return (
     <View style={STYLES.container}>
       <Text style={[STYLES.text28, { color: COLORS.neutral900 }]}>
@@ -35,12 +37,12 @@ const AccountabilityBuddies = () => {
           style={styles.micIcon}
         />
       </View>
-      {/* <NoBuddies /> */}
-      <FlatList
+      <NoBuddies />
+      {/* <FlatList
         data={LIST}
         keyExtractor={(item) => item.id}
         renderItem={(itemData) => <BuddiesList list={itemData.item} />}
-      />
+      /> */}
     </View>
   );
 };
